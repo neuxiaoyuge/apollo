@@ -1,0 +1,38 @@
+#eureka:
+#  client:
+#    serviceUrl:
+#      register-with-eureka: true
+#      fetch-registry: true
+#      defaultZone: http://119.45.50.7:8081/eureka,http://119.45.50.7:8082/eureka
+#  instance:
+#    preferIpAddress: true
+#
+#spring:
+#  profiles:
+#    active: dev
+#
+#---
+#spring:
+#  profiles: prod
+#  application:
+#    name: config-eureka-client
+#  cloud:
+#    config:
+#      label: master
+#      profile: prod
+#      discovery:
+#        enabled: true
+#        service-id: config-eureka-server
+#
+#---
+#spring:
+#  profiles: dev
+#  application:
+#    name: gateway
+#  cloud:
+#    config:
+#      label: master  #指定仓库分支
+#      profile: dev   #指定版本 本例中建立了dev 和 prod两个版本
+#      discovery:
+#        enabled: true  # 开启
+#        service-id: config-server # 指定配置中心服务端的server-id
